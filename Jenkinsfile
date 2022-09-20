@@ -16,8 +16,7 @@
 
 node {
   stage ('test1') {
-    steps {
-      sh ' echo scripted approach'
-     }
+    sh ' echo scripted approach'
+     
     }
   }
