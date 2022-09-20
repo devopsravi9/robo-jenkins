@@ -3,12 +3,12 @@ pipeline {
   stages {
     stage ('test1') {
       steps {
-        ls -al
+        sh 'ls -al'
         }
       }
     stage ('test2') {
       steps {
-        echo hello world
+        sh 'echo hello world'
         }
       }
     }
