@@ -2,14 +2,14 @@ pipeline {
   agent any
   environment {
     MY_URL = "google.com"
-    SSH = "credentials('SSH')"
+    SSH = credentials('SSH')
   }
   stages {
     stage ('test1') {
       steps {
         sh 'ls -al'
         sh ' echo ${MY_URL} '
-        sh ' echo ${SSH_USER}'
+        sh ' echo ${SSH}'
         }
       }
     stage ('test2') {
