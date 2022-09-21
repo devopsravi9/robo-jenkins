@@ -1,14 +1,14 @@
 pipeline {
   agent any
   environment {
-    URL = "google.com"
+    MY_URL = "google.com"
     SSH = credentials('SSH')
   }
   stages {
     stage ('test1') {
       steps {
         sh 'ls -al'
-        sh ' echo ${URL} '
+        sh ' echo ${MY_URL} '
         sh ' echo ${SSH}'
         }
       }
@@ -20,11 +20,11 @@ pipeline {
     }
   }
 
-env.URL="google.com"
+env.MY_URL="google.com"
 node {
   stage ('test1') {
     sh ' echo scripted approach'
-    sh 'ceho ${ URL }'
+    sh 'ceho ${ MY_URL }'
      
     }
   }
