@@ -23,8 +23,7 @@ pipeline {
 env.MY_URL="google.com"
 node {
   stage ('test1') {
-    sh ' echo scripted approach'
-    sh 'ceho ${ MY_URL }'
+    echo " ${ MY_URL }"
      
     }
   }
