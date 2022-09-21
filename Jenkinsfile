@@ -9,7 +9,7 @@ pipeline {
       steps {
         sh 'ls -al'
         sh ' echo ${MY_URL} '
-        sh ' echo ${SSH}'
+        sh ' echo ${SSH_USER}'
         }
       }
     stage ('test2') {
