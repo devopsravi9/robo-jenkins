@@ -32,7 +32,7 @@ pipeline {
   stages {
     stage ('create jenkins job') {
       steps {
-        ansible-playbook jenkins.yml
+        sh 'ansible-playbook jenkins.yml'
         }
       }
     }
