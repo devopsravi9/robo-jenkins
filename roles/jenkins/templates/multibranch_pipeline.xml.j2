@@ -2,7 +2,7 @@
 <org.jenkinsci.plugins.workflow.multibranch.WorkflowMultiBranchProject plugin="workflow-multibranch@716.vc692a_e52371b_">
   <actions/>
   <description></description>
-  <displayName>{{ jobname }}</displayName>
+  <displayName>{{ item.jobname }}</displayName>
   <properties/>
   <folderViews class="jenkins.branch.MultiBranchProjectViewHolder" plugin="branch-api@2.1046.v0ca_37783ecc5">
     <owner class="org.jenkinsci.plugins.workflow.multibranch.WorkflowMultiBranchProject" reference="../.."/>
@@ -20,7 +20,7 @@
   <triggers>
     <com.igalg.jenkins.plugins.mswt.trigger.ComputedFolderWebHookTrigger plugin="multibranch-scan-webhook-trigger@1.0.9">
       <spec></spec>
-      <token>{{ token }}</token>
+      <token>{{ item.token }}</token>
     </com.igalg.jenkins.plugins.mswt.trigger.ComputedFolderWebHookTrigger>
   </triggers>
   <disabled>false</disabled>
@@ -29,7 +29,7 @@
       <jenkins.branch.BranchSource>
         <source class="jenkins.plugins.git.GitSCMSource" plugin="git@4.12.1">
           <id>463c8999-11ca-41ae-bcf8-b27602f5098b</id>
-          <remote>https://github.com/devopsravi9/{{ reponame }}.git</remote>
+          <remote>https://github.com/devopsravi9/{{ item.reponame }}.git</remote>
           <credentialsId></credentialsId>
           <traits>
             <jenkins.plugins.git.traits.BranchDiscoveryTrait/>
