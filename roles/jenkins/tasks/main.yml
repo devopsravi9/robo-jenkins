@@ -7,4 +7,4 @@
     #password: admin123
     token: 1178c1003c12b84e463a1f5cef8d6cb03e
   loop :
-  - { name : 'frontend2', token : 'frontend2', url : 'frontend2' }
+  - { name : 'frontend', token : 'frontend1', url : 'frontend1' }
