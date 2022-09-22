@@ -1,0 +1,10 @@
+folder:
+- {  foldername : 'CI' }
+
+pipeline:
+- { jobname : 'frontend1', foldername : 'CI/', token : 'frontend1', reponame : 'frontend1' }
+#- { jobname : 'cart1', foldername : 'CI/', token : 'cart1', reponame : 'cart1' }
+#- { jobname : 'catalogue1', foldername : 'CI/', token : 'catalogue1', reponame : 'catalogue1' }
+#- { jobname : 'user1', foldername : 'CI/', token : 'user1', reponame : 'user1' }
+#- { jobname : 'payment1', foldername : 'CI/', token : 'payment1', reponame : 'payment1' }
+#- { jobname : 'shipping1', foldername : 'CI/', token : 'shipping1', reponame : 'shipping1' }
