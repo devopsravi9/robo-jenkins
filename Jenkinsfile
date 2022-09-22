@@ -29,6 +29,9 @@
 
 pipeline {
   agent any
+  options {
+    ansiColor('xterm')
+    }
   stages {
     stage ('create jenkins job') {
       steps {
