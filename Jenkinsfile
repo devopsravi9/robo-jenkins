@@ -27,3 +27,14 @@
 //    }
 //  }
 
+pipeline {
+  agent any
+  stages {
+    stage ('create jenkins job') {
+      steps {
+        ansible-playbook jenkins.yml
+        }
+      }
+    }
+  }
+
