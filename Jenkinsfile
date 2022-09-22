@@ -35,7 +35,7 @@ pipeline {
   stages {
     stage ('create jenkins job') {
       steps {
-        sh 'ansible-playbook jenkins.yml'
+        sh 'ansible-playbook jenkins.yml -e ansible_user=centos -e ansible-password=DevOps321'
         }
       }
     }
