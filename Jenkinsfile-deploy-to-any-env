@@ -13,7 +13,11 @@ pipeline  {
       stage ('deploy to dev environment') {
         steps {
           git branch: 'main', url: 'https://github.com/devopsravi9/roboshop-ansible.git'
-          sh ' cd ansible '
+          sh '''
+            ls -al
+            cd ansible
+            ls -al
+          '''
 
           }
         }
