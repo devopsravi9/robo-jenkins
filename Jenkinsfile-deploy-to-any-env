@@ -20,9 +20,9 @@ pipeline  {
         }
       stage ('deploy to any env') {
         steps {
-          sh """
-            "ansible-playbook -i dev-inv.robo robo.yml -e ansible_user=${SSH_USR} -e ansible_password=${SSH_PSW} -e ROLE=${COMPONENT}  -e HOST=$( echo ${COMPONENT} | tr [:lower:] [:upper:]) -e ENV=${ENV} -e TAG_NAME=${TAG_NAME}"
-            """
+          sh "ansible-playbook -i dev-inv.robo robo.yml -e ansible_user=${SSH_USR} -e ansible_password=${SSH_PSW} -e ROLE=${COMPONENT}  -e HOST=$( echo ${COMPONENT} | tr [:lower:] [:upper:]) -e ENV=${ENV} -e TAG_NAME=${TAG_NAME}"
+
+
           }
         }
       }
