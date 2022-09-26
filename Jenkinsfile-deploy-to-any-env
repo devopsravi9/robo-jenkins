@@ -18,11 +18,8 @@ pipeline  {
       stage ('deploy to any env') {
         steps {
           sh """
-            ls -al
             cd ansible
-            ls -al
             ansible-playbook -i dev-inv.robo robo.yml -e ansible_user=${SSH_USR} -e ansible_password=${SSH_PSW} -e ROLE=${COMPONENT}  -e HOST=${ENV}-${COMPONENT}.roboshop.internal -e ENV=${ENV}
-            ls -al
           """
           }
         }
