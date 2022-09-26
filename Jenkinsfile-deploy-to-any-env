@@ -13,19 +13,17 @@ pipeline  {
       stage ('deploy to dev environment') {
         steps {
           git branch: 'main', url: 'https://github.com/devopsravi9/roboshop-ansible.git'
-          sh '''
-            ls -al
-            cd ansible
-            ls -al
-          '''
-
           }
         }
       stage ('deploy to any env') {
         steps {
-          sh "ansible-playbook -i dev-inv.robo robo.yml -e ansible_user=${SSH_USR} -e ansible_password=${SSH_PSW} -e ROLE=${COMPONENT}  -e HOST=${ENV}-${COMPONENT}.roboshop.internal -e ENV=${ENV} -e TAG_NAME=${TAG_NAME}"
-
-
+          sh """
+            ls -al
+            cd ansible
+            ls -al
+            ansible-playbook -i dev-inv.robo robo.yml -e ansible_user=${SSH_USR} -e ansible_password=${SSH_PSW} -e ROLE=${COMPONENT}  -e HOST=${ENV}-${COMPONENT}.roboshop.internal -e ENV=${ENV} -e TAG_NAME=${TAG_NAME}
+            ls -al
+          """
           }
         }
       }
