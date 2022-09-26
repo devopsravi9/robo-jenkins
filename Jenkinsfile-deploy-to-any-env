@@ -1,0 +1,15 @@
+pipeline  {
+  agent any
+  environment {
+    SSH= credentials('SSH')
+    }
+    stages {
+      stage ('deploy to dev environment') {
+        steps {
+          sh """
+            ansible-playbook -i dev-inv.robo robo.yml -e ansible_user=${SSH_USR} -e ansible_password=${SSH_PSW} -e ROLE=${COMPONENT}  -e HOST=$( echo ${COMPONENT} | tr [:lower:] [:upper:]) -e ENV=${ENV}
+          """
+          }
+        }
+      }
+    }
