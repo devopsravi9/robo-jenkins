@@ -12,10 +12,9 @@ pipeline  {
     stages {
       stage ('deploy to dev environment') {
         steps {
-          sh """
-            git branch: 'main', url: 'https://github.com/devopsravi9/roboshop-ansible.git'
-            cd ansible
-          """
+          git branch: 'main', url: 'https://github.com/devopsravi9/roboshop-ansible.git'
+          sh ' cd ansible ''
+
           }
         }
       stage ('deploy to any env') {
