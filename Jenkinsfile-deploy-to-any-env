@@ -12,6 +12,9 @@ pipeline  {
     stages {
       stage ('deploy to dev environment') {
         steps {
+          addShortText background: 'yellow', borderColor: '', color: 'red', link: '', text: "${ENV}"
+          addShortText background: 'yellow', borderColor: '', color: 'red', link: '', text: "${COMPONENT}"
+          addShortText background: 'yellow', borderColor: '', color: 'red', link: '', text: "${TAG_NAME}"
           git branch: 'main', url: 'https://github.com/devopsravi9/roboshop-ansible.git'
           }
         }
@@ -19,7 +22,7 @@ pipeline  {
         steps {
           sh """
             cd ansible
-            ansible-playbook -i dev-inv.robo robo.yml -e ansible_user=${SSH_USR} -e ansible_password=${SSH_PSW} -e ROLE=${COMPONENT}  -e HOST=dev-cart.roboshop.internal -e ENV=${ENV}
+            ansible-playbook -i dev-inv.robo robo.yml -e ansible_user=${SSH_USR} -e ansible_password=${SSH_PSW} -e ROLE=${COMPONENT}  -e HOST=${ENV}-${COMPONENT}.roboshop.internal -e ENV=${ENV}
           """
           }
         }
