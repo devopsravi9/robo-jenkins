@@ -8,3 +8,6 @@ pipeline:
 - { jobname : 'user1', foldername : 'CI/', token : 'user1', reponame : 'user1' }
 - { jobname : 'payment1', foldername : 'CI/', token : 'payment1', reponame : 'payment1' }
 - { jobname : 'shipping1', foldername : 'CI/', token : 'shipping1', reponame : 'shipping1' }
+
+singlePipeline:
+- { jobname : 'terraform-immutable',  filename : 'Jenkinsfile', reponame : 'robo-terraform-mutable' }

@@ -18,3 +18,12 @@
     token: 1178c1003c12b84e463a1f5cef8d6cb03e
   loop : "{{ pipeline }}"
 
+- name: Create a pipeline for jenkins job
+  community.general.jenkins_job:
+    config: "{{ lookup('template', 'templates/single_pipeline.xml.j2') }}"
+    name: "{{ item.jobname }}"
+    url: http://172.31.13.185:8080
+    user: admin
+    #password: admin123
+    token: 1178c1003c12b84e463a1f5cef8d6cb03e
+  loop : "{{ singlePipeline }}"
