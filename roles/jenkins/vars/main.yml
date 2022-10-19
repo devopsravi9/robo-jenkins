@@ -11,4 +11,5 @@ pipeline:
 
 singlePipeline:
 - { jobname : 'terraform-mutable',  filename : 'Jenkinsfile', reponame : 'robo-terraform-mutable' }
+- { jobname : 'terraform-immutable',  filename : 'Jenkinsfile', reponame : 'robo-terraform-immutable' }
 - { jobname : 'mutable-deploy-app',  filename : 'Jenkinsfile', reponame : 'mutable-deploy-app' }
